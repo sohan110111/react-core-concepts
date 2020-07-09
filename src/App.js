@@ -19,6 +19,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
+        <Person></Person>
+        <Person></Person>
+        <Person></Person>
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit done <code>src/App.js</code> and save to reload.
@@ -37,6 +40,18 @@ function App() {
       </header>
     </div>
   );
+}
+function Person() {
+  const personStyle = {
+    border: '2px solid red',
+    margin: '10px'
+  }
+  return (
+  <div style = {personStyle}>
+    <h1>Name : Shakib</h1>
+    <h3>Hero of the year.</h3>
+  </div>
+  )
 }
 
 export default App;

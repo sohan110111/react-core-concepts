@@ -17,10 +17,12 @@ function App() {
   // }
   const nayoks = ["Anower", "Salman", "Faruk", "Dilshan"];
   const nayika = ["Mousumi", "Purnima", "Emma", "Amily"];
+  const products = [{name:'Photoshop', price:'$90.00'}]
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
+        <Product></Product>
         <Person nayok={nayoks[0]} nayika={nayika[0]}></Person>
         <Person nayok={nayoks[1]} nayika={nayika[1]}></Person>
         <Person nayok={nayoks[2]} nayika={nayika[2]}></Person>
@@ -58,5 +60,24 @@ function Person(props) {
   </div>
   )
 }
+
+function Product(props) {
+  const productStyle = {
+    border: '1px solid gray',
+    borderRadius: '5px',
+    backgroundColor: 'lightgray',
+    height: '200px',
+    width: '200px',
+    float: 'left'
+  }
+    return (
+      <div style={productStyle}>
+        <h2>Name:</h2>
+        <h1></h1>
+        <button>Buy now</button>
+      </div>
+    )
+}
+
 
 export default App;

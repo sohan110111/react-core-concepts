@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -28,6 +28,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
+        <Counter></Counter>
         <ul>
           {
             nayoks.map(nayok => <li>{nayok}</li>)
@@ -41,12 +42,12 @@ function App() {
         }
         {/* <Product name={products[0].name} price = {products[0].price}></Product> */}
         {/* Or send object */}
-        <Product product={products[0]}></Product>
+        {/* <Product product={products[0]}></Product>
         <Product product={products[1]}></Product>
         <Person nayok={nayoks[0]} nayika={nayika[0]}></Person>
         <Person nayok={nayoks[1]} nayika={nayika[1]}></Person>
         <Person nayok={nayoks[2]} nayika={nayika[2]}></Person>
-        <Person nayok={nayoks[3]} nayika={nayika[3]}></Person>
+        <Person nayok={nayoks[3]} nayika={nayika[3]}></Person> */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit done <code>src/App.js</code> and save to reload.
@@ -78,6 +79,15 @@ function Person(props) {
   <h1>Nayok : {props.nayok}</h1>
     <h3>Hero of {props.nayika}.</h3>
   </div>
+  )
+}
+
+function Counter() {
+  const [count, setCount] = useState(10);
+  return(
+    <div>
+      <h1>Count: {count}</h1>
+    </div>
   )
 }
 

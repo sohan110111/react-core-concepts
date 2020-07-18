@@ -17,12 +17,19 @@ function App() {
   // }
   const nayoks = ["Anower", "Salman", "Faruk", "Dilshan"];
   const nayika = ["Mousumi", "Purnima", "Emma", "Amily"];
-  const products = [{name:'Photoshop', price:'$90.00'}]
+  const products = [
+    {name:'Photoshop', price:'$90.00'},
+    {name:'Illustrator', price:'$60.99'},
+    {name:'PDF reader', price:'$6.99'}
+  ]
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
-        <Product></Product>
+        {/* <Product name={products[0].name} price = {products[0].price}></Product> */}
+        {/* Or send object */}
+        <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
         <Person nayok={nayoks[0]} nayika={nayika[0]}></Person>
         <Person nayok={nayoks[1]} nayika={nayika[1]}></Person>
         <Person nayok={nayoks[2]} nayika={nayika[2]}></Person>
@@ -70,10 +77,12 @@ function Product(props) {
     width: '200px',
     float: 'left'
   }
+  const {name, price} = props.product;
+  console.log(name, price);
     return (
       <div style={productStyle}>
-        <h2>Name:</h2>
-        <h1></h1>
+        <h3>{name}</h3>
+        <h5>{price}</h5>
         <button>Buy now</button>
       </div>
     )

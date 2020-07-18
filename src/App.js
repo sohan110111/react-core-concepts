@@ -22,10 +22,23 @@ function App() {
     {name:'Illustrator', price:'$60.99'},
     {name:'PDF reader', price:'$6.99'}
   ]
+  // const nayokNames = nayoks.map(nayok => nayok);
+  // console.log(nayokNames);
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
+        <ul>
+          {
+            nayoks.map(nayok => <li>{nayok}</li>)
+          }
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+        </ul>
+        {
+          products.map(pd => <Product product={pd}></Product>)
+        }
         {/* <Product name={products[0].name} price = {products[0].price}></Product> */}
         {/* Or send object */}
         <Product product={products[0]}></Product>
